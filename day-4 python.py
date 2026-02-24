@@ -59,6 +59,7 @@ elif player == 1 and computer == 1:
 elif player == 1 and computer == 2:
     print("You lose")
 
+
 elif player == 2 and computer == 0 :
     print("You lose")
 elif player == 2 and computer == 1:
