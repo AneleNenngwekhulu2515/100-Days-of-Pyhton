@@ -69,7 +69,7 @@ print("You are at a cross road. Where do you want to go?\n")
 
 direction = input("Type ⬅️'left' or 'right'➡️. \n")
 if direction == "right":
-    print("Game Over💀")
+    print("Game Over💀" )
 else:
     print("You've come to a lake. There is an island in the middle of the lake")
     action = input("Type ⏳'wait' to wait for boat. Type 🏊'swim' to swim across.\n ")
