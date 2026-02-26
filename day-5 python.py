@@ -37,23 +37,23 @@ num_numbers = int(input("How many numbers would you like?\n"))
 
 password = ""
 
-# Add letters
+
 for i in range(num_letters):
     password += random.choice(alphabet)
 
-# Add symbols
+
 for i in range(num_symbols):
     password += random.choice(symbols)
 
-# Add numbers
+
 for i in range(num_numbers):
     password += random.choice(numbers)
 
-# Convert to list to shuffle
+
 password_list = list(password)
 random.shuffle(password_list)
 
-# Join back into string
+
 final_password = "".join(password_list)
 
 print(f"Your password is: {final_password}")
