@@ -1,5 +1,71 @@
 import random
 
+stages = [
+"""
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+""",
+"""
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+""",
+"""
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+""",
+"""
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========
+""",
+"""
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+""",
+"""
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+""",
+"""
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+"""
+]
+
 word_list = ["aardvark", 'baboon','camel']
 
 chosen_word = random.choice(word_list)
@@ -11,14 +77,24 @@ for position in range(word_length):
     placeholder += "_"
 print(placeholder)
 
-guess = input("Guess a letter: ").lower()
-print(guess)
+game_over = False
+correct_letters = []
 
-display = ""
-for letter in chosen_word:
-    if guess == letter:
-        display += letter
-    else:
-        display += "_"
+while not game_over:
+    guess = input("Guess a letter: ").lower()
 
-print(display)
+    display = ""
+    for letter in chosen_word:
+        if guess == letter:
+            display += letter
+            correct_letters.append(letter)
+        elif letter in correct_letters:
+            display += letter
+        else:
+            display += "_"
+    print(display)
+
+    if "_" not in display :
+        game_over=True
+        print("You've won")
+
