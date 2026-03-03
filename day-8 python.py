@@ -10,10 +10,11 @@ def calculate_love_score(name1, name2):
                     if char == n  and char == i:
                         count += 1
                         existing_letters.append(i)
+                        existing_letters.append(n)
                         set_lst = list(set(existing_letters))
                         num_elements = len(set_lst)
 
-    print(set_lst, num_elements)
+    print(existing_letters, count)
 
 
-calculate_love_score("Anele", "Anele")
+calculate_love_score("Anele", "kyle")
