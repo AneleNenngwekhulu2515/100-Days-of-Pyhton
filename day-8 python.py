@@ -37,7 +37,7 @@ alphabet = [
 ]
 
 direction = input("Type 'encode' to encrypt(), type 'decode' to decrypt:\n").lower()
-text = input("Type your message:\n").lower()
+text = input("Type your message:\n").lower().strip().replace(' ','')
 shift = int(input("Type the shift number:\n"))
 
 # todo 1: create a function called encrypt that takes original_text and
@@ -81,10 +81,10 @@ def decrypt(original_text, shift_amount):
 
 # decrypt("uvtibslsv", 7)
 
-def ceasar(original_text, shift_amount, direction):
-    if direction == "encode":
+def ceasar(original_text, shift_amount, encode_or_decode):
+    if encode_or_decode == "encode":
         encrypt(original_text, shift_amount)
-    elif direction == "decode":
+    elif encode_or_decode == "decode":
         decrypt(original_text, shift_amount)
 
-ceasar("hulsl", 7, "decode")
+ceasar(original_text=text, shift_amount=shift, encode_or_decode=direction )
