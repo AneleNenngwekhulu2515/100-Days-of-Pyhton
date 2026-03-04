@@ -50,7 +50,6 @@ def encrypt(original_text, shift_amount):
     indexes = []
     result = []
     for n in original_text.lower():
-        original_index = alphabet.index(n)
         shifting = alphabet.index(n)+shift_amount
         indexes.append(shifting)
 
@@ -60,11 +59,24 @@ def encrypt(original_text, shift_amount):
         result.append(alphabet[i])
     print(f"Shifted list: {result}")
     text = "".join(result)
-    print(f"Final encoded word is : {text}")
+    print(f"Final encoded word is : {text}\n")
 
 encrypt("Zane", 7)
 
-# todo 3: Call the encrypt function and pass in the user inputs. you should be
 
-# todo 4: What happens if you shift z forward by 9
+def decrypt(original_text, shift_amount):
+    indexes = []
+    result = []
+    for n in original_text.lower():
+        decrypted = alphabet.index(n)-shift_amount
+        indexes.append(decrypted)
 
+    print(f"decrypted indexes: {indexes}")
+    for i in indexes:
+        i = i % len(alphabet)
+        result.append(alphabet[i])
+    print(f"Decrypted list: {result}")
+    text = "".join(result)
+    print(f"Final Decrypted word is : {text}")
+
+decrypt("ghul", 7)
