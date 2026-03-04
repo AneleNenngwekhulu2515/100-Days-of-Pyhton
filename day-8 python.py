@@ -20,7 +20,7 @@ def calculate_love_score(name1, name2):
 calculate_love_score("Anele", "kyle")
 
 
-caesar_art = r"""
+print(r"""
    _____                              _____ _       _               
   / ____|                            / ____(_)     | |              
  | |     __ _  ___  ___  __ _ _ __  | |     _ _ __ | |__   ___ _ __ 
@@ -29,4 +29,32 @@ caesar_art = r"""
   \_____\__,_|\___||___/\__,_|_|     \_____|_| .__/|_| |_|\___|_|   
                                                | |                    
                                                |_|                    
-"""
+""")
+
+alphabet = [
+    'a','b','c','d','e','f','g','h','i','j','k','l','m',
+    'n','o','p','q','r','s','t','u','v','w','x','y','z'
+]
+
+direction = input("Type 'encode' to encrypt(), type 'decode' to decrypt:\n").lower()
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:"))
+
+# todo 1: create a function called encrypt that takes original_text and
+#  shift_amount as 2 inputs
+
+# todo 2: Inside the encrypt function, shift each letter of the original_text
+#  forwards in the alphabet by the shift_amount and print the encrypted text
+
+def encrypt(original_text, shift_amount):
+    for n in original_text:
+        found = alphabet.index(n)+shift_amount
+        print(found)
+
+
+encrypt("anele", 5)
+
+# todo 3: Call the encrypt function and pass in the user inputs. you should be
+
+# todo 4: What happens if you shift z forward by 9
+
