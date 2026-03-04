@@ -36,9 +36,7 @@ alphabet = [
     'n','o','p','q','r','s','t','u','v','w','x','y','z'
 ]
 
-direction = input("Type 'encode' to encrypt(), type 'decode' to decrypt:\n").lower()
-text = input("Type your message:\n").lower().strip().replace(' ','')
-shift = int(input("Type the shift number:\n"))
+
 
 # todo 1: create a function called encrypt that takes original_text and
 #  shift_amount as 2 inputs
@@ -83,7 +81,7 @@ def decrypt(original_text, shift_amount):
         result.append(alphabet[i])
     print(f"Decrypted list: {result}")
     text = "".join(result)
-    print(f"Final Decrypted word is : {text}")
+    print(f"Final Decrypted word is : {text}\n")
 
 # decrypt("uvtibslsv", 7)
 
@@ -93,6 +91,17 @@ def ceasar(original_text, shift_amount, encode_or_decode):
     elif encode_or_decode == "decode":
         decrypt(original_text, shift_amount)
 
+should_continue = True
+while should_continue:
+    direction = input("Type 'encode' to encrypt(), type 'decode' to decrypt:\n").lower()
+    text = input("Type your message:\n").lower().strip().replace(' ', '')
+    shift = int(input("Type the shift number:\n"))
 
 
-ceasar(original_text=text, shift_amount=shift, encode_or_decode=direction )
+    ceasar(original_text=text, shift_amount=shift, encode_or_decode=direction )
+    restart = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n").lower()
+    if restart == "no":
+        should_continue = False
+        print("Thank you for playing! GOODBYE!")
+    elif restart == "yes":
+        should_continue = True
