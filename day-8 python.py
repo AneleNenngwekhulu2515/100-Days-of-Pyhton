@@ -17,7 +17,7 @@ def calculate_love_score(name1, name2):
     print(existing_letters, count)
 
 
-calculate_love_score("Anele", "kyle")
+calculate_love_score("Anele", "nombulelo")
 
 
 print(r"""
@@ -50,8 +50,11 @@ def encrypt(original_text, shift_amount):
     indexes = []
     result = []
     for n in original_text.lower():
-        shifting = alphabet.index(n)+shift_amount
-        indexes.append(shifting)
+        if n in alphabet:
+            shifting = alphabet.index(n) + shift_amount
+            indexes.append(shifting)
+        else:
+            result.append(n)
 
     print(f"Shifted indexes: {indexes}")
     for i in indexes:
@@ -68,8 +71,11 @@ def decrypt(original_text, shift_amount):
     indexes = []
     result = []
     for n in original_text.lower():
-        decrypted = alphabet.index(n)-shift_amount
-        indexes.append(decrypted)
+        if n in alphabet:
+            shifting = alphabet.index(n) - shift_amount
+            indexes.append(shifting)
+        else:
+            result.append(n)
 
     print(f"decrypted indexes: {indexes}")
     for i in indexes:
@@ -86,5 +92,7 @@ def ceasar(original_text, shift_amount, encode_or_decode):
         encrypt(original_text, shift_amount)
     elif encode_or_decode == "decode":
         decrypt(original_text, shift_amount)
+
+
 
 ceasar(original_text=text, shift_amount=shift, encode_or_decode=direction )
