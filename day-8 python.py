@@ -38,7 +38,7 @@ alphabet = [
 
 direction = input("Type 'encode' to encrypt(), type 'decode' to decrypt:\n").lower()
 text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:"))
+shift = int(input("Type the shift number:\n"))
 
 # todo 1: create a function called encrypt that takes original_text and
 #  shift_amount as 2 inputs
@@ -47,12 +47,22 @@ shift = int(input("Type the shift number:"))
 #  forwards in the alphabet by the shift_amount and print the encrypted text
 
 def encrypt(original_text, shift_amount):
-    for n in original_text:
-        found = alphabet.index(n)+shift_amount
-        print(found)
+    indexes = []
+    result = []
+    for n in original_text.lower():
+        original_index = alphabet.index(n)
+        shifting = alphabet.index(n)+shift_amount
+        indexes.append(shifting)
 
+    print(f"Shifted indexes: {indexes}")
+    for i in indexes:
+        i = i % len(alphabet)
+        result.append(alphabet[i])
+    print(f"Shifted list: {result}")
+    text = "".join(result)
+    print(f"Final encoded word is : {text}")
 
-encrypt("anele", 5)
+encrypt("Zane", 7)
 
 # todo 3: Call the encrypt function and pass in the user inputs. you should be
 
