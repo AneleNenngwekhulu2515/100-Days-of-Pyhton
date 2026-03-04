@@ -61,7 +61,7 @@ def encrypt(original_text, shift_amount):
     text = "".join(result)
     print(f"Final encoded word is : {text}\n")
 
-encrypt("Zane", 7)
+# encrypt("Nombulelo", 7)
 
 
 def decrypt(original_text, shift_amount):
@@ -79,4 +79,12 @@ def decrypt(original_text, shift_amount):
     text = "".join(result)
     print(f"Final Decrypted word is : {text}")
 
-decrypt("ghul", 7)
+# decrypt("uvtibslsv", 7)
+
+def ceasar(original_text, shift_amount, direction):
+    if direction == "encode":
+        encrypt(original_text, shift_amount)
+    elif direction == "decode":
+        decrypt(original_text, shift_amount)
+
+ceasar("hulsl", 7, "decode")
