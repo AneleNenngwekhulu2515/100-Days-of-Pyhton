@@ -19,3 +19,17 @@ for value in student_scores:
     elif grades <=70:
         student_grades[value] = "Fail"
         print(student_grades)
+
+travel_log = {
+    "france": ["paris", "lille", "dijon"],
+    "germany": ["strutt", "berlin"]
+}
+
+print(travel_log["france"][1])
+
+travel_log = {
+    "france": {"num_times_visited":8 , "cities_visited":["strutt", "berlin"] },
+    "germany": ["strutt", "berlin"]
+}
+
+print(travel_log["france"]["cities_visited"][1])
