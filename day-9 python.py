@@ -48,22 +48,27 @@ print(r"""
 
 print("Welcome to the secret auction program.")
 
-# name = input("What is your name?: \n")
-# bid = int(input("What is your bid?: \n"))
-
-
-
 bid_over = True
 biddings = {}
+values = []
 while bid_over:
+
     name = input("What is your name?: \n")
     bid = int(input("What is your bid?: $\n"))
+    biddings[name] = bid
 
     repeat = input("Are there any other bidders? Type 'yes' or 'no' \n")
     if repeat == "yes":
-
         biddings[name] = bid
     else :
         bid_over = False
-    print(biddings)
+print(biddings)
+
+for key in biddings:
+    value = biddings[key]
+    values.append(value)
+print(values)
+
+highest_bid = max(values)
+print(highest_bid)
 
