@@ -67,8 +67,8 @@ print(biddings)
 
 for key in biddings:
     value = max(biddings, key=biddings.get)
-
-print(f"The winner is {value}")
+print("\n"*100)
+print(f"The winner is {value.title()}")
 
 
 
