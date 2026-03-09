@@ -1,5 +1,5 @@
 def format_name(f_name, l_name):
-    formattes_f_name = f_name.title()
+    formatted_f_name = f_name.title()
     formatted_l_name = l_name.title()
     return f"{formattes_f_name} {formatted_l_name}"
 
