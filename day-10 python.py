@@ -6,12 +6,19 @@ def format_name(f_name, l_name):
 formatted_string = format_name("anele", "nenngwekhulu")
 print(formatted_string)
 
-def function_1(text):
-    return text + text
 
-def function_2(text):
-    return text.title()
+def is_leap_year(year):
+    # Write your code here.
+    # Don't change the function name.
+    if year%4==0:
+        if year%100==0:
+            if year%400==0:
+                return True
+            else :
+                return False
+        else:
+             return True
+    else:
+        return False
 
-
-output= function_1("hello")
-print(output)
+print(is_leap_year(1989))
