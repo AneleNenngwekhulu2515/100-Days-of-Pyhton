@@ -50,7 +50,7 @@ def calculator(num1, operator, num2):
 
     if operator == '+':
         return num1 + num2
-    elif operator== '-':
+    elif operator == '-':
         return num1 - num2
     elif operator == '*':
         return num1 * num2
@@ -60,4 +60,15 @@ def calculator(num1, operator, num2):
         return "You are missing inputs"
 
 
-calculator(1,"+",2)
+
+    calculation = True
+    while calculation:
+        contin = input("Type 'y' to continue calculating with number , or type 'n' to start new calculation:")
+        if contin == 'y':
+            calculator()
+        elif contin == 'n':
+            calculation = False
+    return "done"
+
+
+print(calculator(1,"+",2))
