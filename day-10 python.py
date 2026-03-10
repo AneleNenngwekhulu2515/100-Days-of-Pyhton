@@ -41,7 +41,7 @@ print("""
  |_________________________|
 """)
 
-def calculator(num1, operator, num2):
+def calculator():
     num1 = int(input("What's the first number? "))
     operations = "*\n-\n+\n/\n"
     print(operations)
@@ -49,26 +49,28 @@ def calculator(num1, operator, num2):
     num2 = int(input("What's the next number? "))
 
     if operator == '+':
-        return num1 + num2
+        result =  num1 + num2
     elif operator == '-':
-        return num1 - num2
+        result = num1 - num2
     elif operator == '*':
-        return num1 * num2
+        result = num1 * num2
     elif operator == '/':
-        return num1 / num2
+        result = num1 / num2
     else:
-        return "You are missing inputs"
+        result  = "You are missing inputs"
+    return result
 
 
 
-    calculation = True
-    while calculation:
-        contin = input("Type 'y' to continue calculating with number , or type 'n' to start new calculation:")
-        if contin == 'y':
-            calculator()
-        elif contin == 'n':
-            calculation = False
-    return "done"
+calculation = True
+while calculation:
+    answer = calculator()
+    print("Result:", answer)
+
+    contin = input("Type 'y' to continue calculating or 'n' to stop: ")
+
+    if contin == 'n':
+        calculation = False
 
 
-print(calculator(1,"+",2))
+print(calculator())
