@@ -42,6 +42,22 @@ print("""
 """)
 
 def calculator(num1, operator, num2):
+    num1 = int(input("What's the first number? "))
+    operations = "*\n-\n+\n/\n"
+    print(operations)
+    operator = input("Pick an operation: ")
+    num2 = int(input("What's the next number? "))
+
+    if operator == '+':
+        return num1 + num2
+    elif operator== '-':
+        return num1 - num2
+    elif operator == '*':
+        return num1 * num2
+    elif operator == '/':
+        return num1 / num2
+    else:
+        return "You are missing inputs"
 
 
-calculator(int(input("What's the first number? ")), input("Pick an operation: "), int(input("What's the next number? ")))
+calculator(1,"+",2)
