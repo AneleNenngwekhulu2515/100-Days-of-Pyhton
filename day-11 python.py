@@ -57,6 +57,10 @@ for _ in range(2):
     computer_cards.append(new_card)
 
 def calculate_score(user_cards, computer_cards):
+    total_user_cards = sum(user_cards)
+    total_computer_cards = sum(computer_cards)
+
+    return total_user_cards, total_computer_cards
 
 
 
