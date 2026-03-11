@@ -67,7 +67,21 @@ while calculation:
     answer = calculator()
     print("Result:", answer)
 
-    contin = input("Type 'y' to continue calculating or 'n' to stop: ")
+    contin = input(f"Type 'y' to continue calculating with {answer} or 'n' to start a new calculation: ")
+    if contin == "y":
+        operator = input("Pick an operation: ")
+        num2 = int(input("What's the next number? "))
+        if operator == '+':
+            result = answer + num2
+        elif operator == '-':
+            result = answer - num2
+        elif operator == '*':
+            result = answer * num2
+        elif operator == '/':
+            result = answer / num2
+        else:
+            result = "You are missing inputs"
+        print(result)
 
     if contin == 'n':
         calculation = False
