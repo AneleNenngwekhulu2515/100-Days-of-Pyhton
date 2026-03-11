@@ -52,7 +52,12 @@ user_cards = []
 computer_cards = []
 
 for _ in range(2):
-    deal_card()
+    new_card = deal_card()
+    user_cards.append(new_card)
+    computer_cards.append(new_card)
+
+def calculate_score(user_cards, computer_cards):
+
 
 
 
