@@ -41,50 +41,41 @@ print("""
  |_________________________|
 """)
 
-def calculator():
-    num1 = int(input("What's the first number? "))
-    operations = "*\n-\n+\n/\n"
-    print(operations)
-    operator = input("Pick an operation: ")
-    num2 = int(input("What's the next number? "))
-
+def calculate(num1, operator, num2):
     if operator == '+':
-        result =  num1 + num2
+        return num1 + num2
     elif operator == '-':
-        result = num1 - num2
+        return num1 - num2
     elif operator == '*':
-        result = num1 * num2
+        return num1 * num2
     elif operator == '/':
-        result = num1 / num2
-    else:
-        result  = "You are missing inputs"
-    return result
-
+        return num1 / num2
 
 
 calculation = True
-while calculation:
-    answer = calculator()
-    print("Result:", answer)
 
-    contin = input(f"Type 'y' to continue calculating with {answer} or 'n' to start a new calculation: ")
-    if contin == "y":
+while calculation:
+
+    num1 = int(input("What's the first number? "))
+
+    continue_calc = True
+
+    while continue_calc:
+
+        print("+\n-\n*\n/")
         operator = input("Pick an operation: ")
         num2 = int(input("What's the next number? "))
-        if operator == '+':
-            result = answer + num2
-        elif operator == '-':
-            result = answer - num2
-        elif operator == '*':
-            result = answer * num2
-        elif operator == '/':
-            result = answer / num2
+
+        answer = calculate(num1, operator, num2)
+
+        print(f"{num1} {operator} {num2} = {answer}")
+
+        contin = input(
+            f"Type 'y' to continue calculating with {answer}, or 'n' to start a new calculation: "
+        )
+
+        if contin == "y":
+            num1 = answer   # answer becomes the next first number
         else:
-            result = "You are missing inputs"
-        print(result)
-
-    if contin == 'n':
-        calculation = False
-
-
-print(calculator())
+            continue_calc = False
+            print("\n" * 50)
