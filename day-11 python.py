@@ -45,6 +45,14 @@ print("""
 
 def deal_card():
     cards_deck = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 10, 10, 10]
+    card = random.choice(cards_deck)
+    return card
+
+user_cards = []
+computer_cards = []
+
+for _ in range(2):
+    deal_card()
 
 
 
