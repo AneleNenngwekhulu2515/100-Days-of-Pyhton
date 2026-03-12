@@ -59,6 +59,8 @@ def calculate_score(cards):
 
 user_cards = []
 computer_cards = []
+computer_score = -1
+user_score = -1
 is_game_over = False
 
 
@@ -97,8 +99,18 @@ while computer_score<17 and computer_score != 0:
 def compare(user_score, computer_score):
     if user_score==computer_score:
         return "Its a Draw"
-    if computer_score == 0:
+    elif computer_score == 0 or user_score>21:
         return "You loose"
+    elif user_score==0 or computer_score>21:
+        return "Computer loses"
+    else:
+        if user_score>computer_score:
+            return "User wins"
+        elif computer_score>user_score:
+            return "Computer wins"
+
+compare()
+
 
 
 
