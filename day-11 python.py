@@ -57,6 +57,21 @@ def calculate_score(cards):
 
     return sum(cards)
 
+def compare(u_score, c_score):
+    if u_score == c_score:
+        return "Its a Draw"
+    elif c_score == 0 or u_score>21:
+        return "You loose"
+    elif u_score==0 or c_score>21:
+        return "Computer loses"
+    elif u_score>c_score:
+        return "You wins"
+    elif c_score>u_score:
+        return "Computer wins"
+    else:
+        return "you lose"
+
+
 user_cards = []
 computer_cards = []
 computer_score = -1
@@ -96,20 +111,9 @@ while computer_score<17 and computer_score != 0:
     # print(f"Computer cards: {computer_cards[0]}")
     # print(user_cards)
 
-def compare(user_score, computer_score):
-    if user_score==computer_score:
-        return "Its a Draw"
-    elif computer_score == 0 or user_score>21:
-        return "You loose"
-    elif user_score==0 or computer_score>21:
-        return "Computer loses"
-    else:
-        if user_score>computer_score:
-            return "User wins"
-        elif computer_score>user_score:
-            return "Computer wins"
 
-compare()
+
+print(compare(user_score,computer_score))
 
 
 
