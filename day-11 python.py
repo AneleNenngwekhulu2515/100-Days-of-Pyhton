@@ -44,8 +44,8 @@ print("""
 #     print("Draw")
 
 def deal_card():
-    cards_deck = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 10, 10, 10]
-    card = random.choice(cards_deck)
+    cards= [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 10, 10, 10]
+    card = random.choice(cards)
     return card
 
 user_cards = []
@@ -56,11 +56,16 @@ for _ in range(2):
     user_cards.append(new_card)
     computer_cards.append(new_card)
 
-def calculate_score(user_cards, computer_cards):
-    total_user_cards = sum(user_cards)
-    total_computer_cards = sum(computer_cards)
+def calculate_score(cards):
+    if sum(cards)==21 and len(cards)==2:
+        return 0
+    if 11 in cards and sum(cards)>21:
+        cards.remove(11)
+        cards.append(1)
 
-    return total_user_cards, total_computer_cards
+    return sum(cards)
+
+
 
 
 
