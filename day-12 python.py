@@ -1,16 +1,14 @@
 #prime number checker
 
-factors = []
-
-
 def find_factors(num):
+    factors = []
     for i in range(1, num + 1):
         if num % i == 0:
             factors.append(i)
     return factors
 
-def is_prime(n):
-
+def is_prime(num):
+    factors = find_factors(num)
     if len(factors)==2:
         return True
     else:
