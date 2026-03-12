@@ -67,37 +67,38 @@ for _ in range(2):
     user_cards.append(new_card)
     computer_cards.append(new_card)
 
-user_score = calculate_score(user_cards)
-computer_score = calculate_score(computer_cards)
-
-print(f"Your cards: {user_cards}, current score: {user_score}")
-print(f"Computer cards: {computer_cards[0]}")
-
-
-if user_score>21 or user_score==0 or computer_score==0:
-    is_game_over = True
-else:
-    deal = input("Do you want to draw another card? ")
-    if deal == "yes":
-        drawed_card = deal_card()
-        user_cards.append(drawed_card)
-        user_score = calculate_score(user_cards)
-    elif deal == "no":
-        is_game_over = True
-
-if computer_score<17:
-    computer_drawed_card = deal_card()
-    computer_cards.append(computer_drawed_card)
+while not is_game_over:
+    user_score = calculate_score(user_cards)
     computer_score = calculate_score(computer_cards)
 
-print(f"Your cards: {user_cards}, current score: {user_score}")
-print(user_cards)
+    print(f"Your cards: {user_cards}, current score: {user_score}")
+    print(f"Computer cards: {computer_cards[0]}")
 
-def compare(user_score, computer_score):
-    if user_score==computer_score:
-        return "Its a Draw"
-    if computer_score==0:
-        return "You loose"
+
+    if user_score>21 or user_score==0 or computer_score==0:
+        is_game_over = True
+    else:
+        deal = input("Do you want to draw another card? 'y' or 'n' ").lower()
+        if deal == "y":
+            drawed_card = deal_card()
+            user_cards.append(drawed_card)
+            user_score = calculate_score(user_cards)
+        elif deal == "n":
+            is_game_over = True
+
+    if computer_score<17:
+        computer_drawed_card = deal_card()
+        computer_cards.append(computer_drawed_card)
+        computer_score = calculate_score(computer_cards)
+
+    print(f"Your cards: {user_cards}, current score: {user_score}")
+    print(user_cards)
+
+    def compare(user_score, computer_score):
+        if user_score==computer_score:
+            return "Its a Draw"
+        if computer_score == 0:
+            return "You loose"
 
 
 
