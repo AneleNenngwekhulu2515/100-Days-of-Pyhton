@@ -112,7 +112,8 @@ while computer_score<17 and computer_score != 0:
     # print(user_cards)
 
 
-
+print(f"Your final hand {user_cards}, final score: {user_score}")
+print(f"Computer final hand {computer_cards}, final score: {computer_score}")
 print(compare(user_score,computer_score))
 
 
