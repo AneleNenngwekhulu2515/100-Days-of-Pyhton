@@ -19,3 +19,50 @@ print(is_prime(73))
 print(find_factors(75))
 print(is_prime(75))
 
+print(r"""
+ _   _                 _                  _____                       
+| \ | |               | |                / ____|                      
+|  \| |_   _ _ __ ___ | |__   ___ _ __  | |  __  __ _ _ __ ___   ___  
+| . ` | | | | '_ ` _ \| '_ \ / _ \ '__| | | |_ |/ _` | '_ ` _ \ / _ \ 
+| |\  | |_| | | | | | | |_) |  __/ |    | |__| | (_| | | | | | |  __/ 
+|_| \_|\__,_|_| |_| |_|_.__/ \___|_|     \_____|\__,_|_| |_| |_|\___| 
+
+                    NUMBER GUESSING GAME
+""")
+
+import random
+
+print("Welcome to the Number Guessing Game!")
+print("I'm thinking of a number between 1 and 100.")
+
+
+def random_number():
+    chosen_number = random.randint(1, 100)
+    return chosen_number
+print(random_number())
+
+dificulty_level = input("Choose a difficulty level. Type 'easy' or 'hard': ")
+easy_counts = 10
+hard_counts = 5
+
+guessed = True
+
+while guessed:
+    if dificulty_level == 'easy':
+        print("You have 10 attempts remaining to guess the number ")
+        guess = int(input("Make a guess: "))
+        if guess == random_number():
+            print("You got it!")
+        elif guess > random_number():
+            print("Too high!")
+            easy_counts -= 1
+        elif guess < random_number():
+            print("Too low!")
+
+print(f"remaining lives : {easy_counts}")
+
+
+
+
+
+
