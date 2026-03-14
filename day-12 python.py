@@ -47,9 +47,11 @@ hard_counts = 5
 
 guessed = True
 
+
+
 while guessed:
     if dificulty_level == 'easy':
-        print("You have 10 attempts remaining to guess the number ")
+        print(f"You have {easy_counts} attempts remaining to guess the number ")
         guess = int(input("Make a guess: "))
         if guess == random_number():
             print("You got it!")
@@ -58,8 +60,26 @@ while guessed:
             easy_counts -= 1
         elif guess < random_number():
             print("Too low!")
+            easy_counts -= 1
 
-print(f"remaining lives : {easy_counts}")
+    if dificulty_level == 'hard':
+        print(f"You have {hard_counts} attempts remaining to guess the number ")
+        guess = int(input("Make a guess: "))
+        if guess == random_number():
+            print("You got it!")
+        elif guess > random_number():
+            print("Too high!")
+            hard_counts -= 1
+        elif guess < random_number():
+            print("Too low!")
+            hard_counts -= 1
+
+    if easy_counts==0 and hard_counts==0:
+        print("You've run out of attempts")
+
+
+
+
 
 
 
