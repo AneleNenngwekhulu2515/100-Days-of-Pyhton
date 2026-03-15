@@ -76,6 +76,7 @@ while guessed:
 
     if easy_counts==0 and hard_counts==0:
         print("You've run out of attempts")
+        print("you loose")
 
 
 
