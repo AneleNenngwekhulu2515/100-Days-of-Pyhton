@@ -57,7 +57,7 @@ while guessed:
         print(f"You have {easy_counts} attempts remaining to guess the number ")
         guess = int(input("Make a guess: "))
         if guess == number:
-            print("You got it!")
+            print(f"You got it!🏆. The number was {number}")
             break
         elif guess > number:
             print("Too high!")
@@ -70,7 +70,7 @@ while guessed:
         print(f"You have {hard_counts} attempts remaining to guess the number ")
         guess = int(input("Make a guess🧠: "))
         if guess == number:
-            print("You got it!")
+            print(f"You got it!🏆. The number was {number}")
             break
         elif guess > number:
             print("Too high!")
