@@ -47,9 +47,8 @@ hard_counts = 5
 
 guessed = True
 
+#made it a variable, because everytime i called it would create a new random number
 number = random_number()
-
-
 
 
 while guessed:
