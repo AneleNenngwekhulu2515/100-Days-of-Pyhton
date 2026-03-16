@@ -48,7 +48,7 @@ hard_counts = 5
 guessed = True
 
 number = random_number()
-print(number)
+
 
 
 
@@ -85,7 +85,9 @@ while guessed:
     if easy_counts==0 or hard_counts==0:
         print("You've run out of attempts😢")
         print("YOU LOST💀")
+        print(f"The number was {number}")
         break
+
 
 
 
