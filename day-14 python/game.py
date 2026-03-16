@@ -18,4 +18,17 @@ print(f"Against B: {individual_b['name']}, {individual_b['description']}, {indiv
 game_data.celebrities.remove(individual_b)
 guess = input("Who has more followers? Type 'A' or 'B': ").upper()
 
+score = 0
+
+
+people = individual_a['followers'],individual_b['followers']
+print(people)
+
+# if people[0] > people[1]:
+#     print(f"{individual_a['name']} wins!")
+# else:
+#     print(f"{individual_a['name']} wins!")
+
+
+
 
