@@ -23,10 +23,15 @@ game_over = False
 score = 0
 
 while not game_over:
+    individual_b = random.choice(game_data.celebrities)
+    while individual_b == individual_a:
+        individual_b = random.choice(game_data.celebrities)
+
     print(f"Against B: {individual_b['name']}, {individual_b['description']}, {individual_b['country']}")
     guess = input("Who has more followers? Type 'A' or 'B': ").upper()
 
-    score = 0
+
+
 
     if individual_a["followers"] > individual_b["followers"]:
         correct_answer = "A"
@@ -36,6 +41,10 @@ while not game_over:
     if guess == correct_answer:
         score += 1
         print(f"You're right! Score: {score}")
+
+        if correct_answer == "B":
+            individual_a = individual_b
+
     else:
         print(f"Sorry, that's wrong. Final score: {score}")
 
