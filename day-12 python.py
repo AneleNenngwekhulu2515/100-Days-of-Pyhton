@@ -39,7 +39,7 @@ print("I'm thinking of a number between 1 and 100.")
 def random_number():
     chosen_number = random.randint(1, 100)
     return chosen_number
-print(random_number())
+
 
 dificulty_level = input("Choose a difficulty level. Type 'easy' or 'hard': ")
 easy_counts = 10
@@ -47,32 +47,40 @@ hard_counts = 5
 
 guessed = True
 
+number = random_number()
+print(number)
+
 
 
 while guessed:
     if dificulty_level == 'easy':
         print(f"You have {easy_counts} attempts remaining to guess the number ")
         guess = int(input("Make a guess: "))
-        if guess == random_number():
+        if guess == number:
             print("You got it!")
-        elif guess > random_number():
+            break
+        elif guess > number:
             print("Too high!")
             easy_counts -= 1
-        elif guess < random_number():
+        elif guess < number:
             print("Too low!")
             easy_counts -= 1
 
     if dificulty_level == 'hard':
         print(f"You have {hard_counts} attempts remaining to guess the number ")
         guess = int(input("Make a guess: "))
-        if guess == random_number():
+        if guess == number:
             print("You got it!")
-        elif guess > random_number():
+            break
+        elif guess > number:
             print("Too high!")
             hard_counts -= 1
-        elif guess < random_number():
+        elif guess < number:
             print("Too low!")
             hard_counts -= 1
+
+    # print("Guess:", guess)
+    # print("Number:", number)
 
     if easy_counts==0 and hard_counts==0:
         print("You've run out of attempts")
