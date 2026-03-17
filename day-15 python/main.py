@@ -2,6 +2,14 @@ from coffee_machine import MENU, resources
 
 coffee_maker = True
 
+def process_coins():
+    print("Please insert coins. ")
+    total = int(input("How many quaters? "))* 0.25
+    total = int(input("How many dimes? ")) * 0.1
+    total = int(input("How many nickels? ")) * 0.05
+    total = int(input("How many pennies? ")) * 0.01
+    return total
+
 def money(money_recieved, drink_cost):
     # penny = 0.01
     # nickel =0.05
