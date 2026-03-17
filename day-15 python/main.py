@@ -37,36 +37,55 @@ while coffee_maker:
         print(f"Coffee: {resources['coffee']}ml")
         print(f"Money: ${profit}")
 
-    if drink == "espresso":
-        for key, value in MENU["espresso"]["ingredients"].items():
+    elif drink in MENU:
+        enough_resources = True
+
+        for key, value in MENU[drink]["ingredients"].items():
             print(f"{key}: {value}")
 
             if resources[key] < value:
                 print(f"Sorry there is not enough {key}")
-            else:
-                resources[key] -= value
+                enough_resources = False
 
-
-    if drink == "cappuccino":
-        for key, value in MENU["cappuccino"]["ingredients"].items():
-            print(f"{key}: {value}")
-
-            if resources[key] < value:
-                print(f"Sorry there is not enough {key}")
-            else:
-                resources[key] -= value
-
-
-    if drink == "latte":
-        for key, value in MENU["latte"]["ingredients"].items():
-            print(f"{key}: {value}")
-
-            if resources[key] < value:
-                print(f"Sorry there is not enough {key}")
-            else:
-                resources[key] -= value
+        if enough_resources:
+            payment = process_coins()
+            if money(payment, MENU[drink]["cost"]):
+                for key, value in MENU[drink]["ingredients"].items():
+                    resources[key] -= value
+                print(f"Here is your {drink} ☕")
 
     print(resources)
+
+    # if drink == "espresso":
+    #     for key, value in MENU["espresso"]["ingredients"].items():
+    #         print(f"{key}: {value}")
+    #
+    #         if resources[key] < value:
+    #             print(f"Sorry there is not enough {key}")
+    #         else:
+    #             resources[key] -= value
+    #
+    #
+    # if drink == "cappuccino":
+    #     for key, value in MENU["cappuccino"]["ingredients"].items():
+    #         print(f"{key}: {value}")
+    #
+    #         if resources[key] < value:
+    #             print(f"Sorry there is not enough {key}")
+    #         else:
+    #             resources[key] -= value
+    #
+    #
+    # if drink == "latte":
+    #     for key, value in MENU["latte"]["ingredients"].items():
+    #         print(f"{key}: {value}")
+    #
+    #         if resources[key] < value:
+    #             print(f"Sorry there is not enough {key}")
+    #         else:
+    #             resources[key] -= value
+    #
+    # print(resources)
 
 
 
