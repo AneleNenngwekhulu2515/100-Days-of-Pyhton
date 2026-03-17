@@ -1,20 +1,19 @@
 from coffee_machine import MENU, resources
 
 coffee_maker = True
+profit = 0
 
 def process_coins():
     print("Please insert coins. ")
-    total = int(input("How many quaters? "))* 0.25
-    total = int(input("How many dimes? ")) * 0.1
-    total = int(input("How many nickels? ")) * 0.05
-    total = int(input("How many pennies? ")) * 0.01
+    total = 0
+    total += int(input("How many quaters? "))* 0.25
+    total += int(input("How many dimes? ")) * 0.1
+    total += int(input("How many nickels? ")) * 0.05
+    total += int(input("How many pennies? ")) * 0.01
     return total
 
 def money(money_recieved, drink_cost):
-    # penny = 0.01
-    # nickel =0.05
-    # dime = 0.10
-    # quater = 0.25
+
     if money_recieved >= drink_cost:
         change = round(money_recieved - drink_cost, 2)
         print(f"Here is ${change} in change")
@@ -36,7 +35,7 @@ while coffee_maker:
         print(f"Water: {resources['water']}ml")
         print(f"Milk: {resources['milk']}ml")
         print(f"Coffee: {resources['coffee']}ml")
-        print(f"Money: {resources['water']}ml")
+        print(f"Money: ${profit}")
 
     if drink == "espresso":
         for key, value in MENU["espresso"]["ingredients"].items():
