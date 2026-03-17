@@ -25,12 +25,27 @@ while not coffee_maker:
             else:
                 resources[key] -= value
 
+
+    if drink == "cappuccino":
+        for key, value in MENU["cappuccino"]["ingredients"].items():
+            print(f"{key}: {value}")
+
+            if resources[key] < value:
+                print(f"Sorry there is not enough {key}")
+            else:
+                resources[key] -= value
+
+
+    if drink == "latte":
+        for key, value in MENU["latte"]["ingredients"].items():
+            print(f"{key}: {value}")
+
+            if resources[key] < value:
+                print(f"Sorry there is not enough {key}")
+            else:
+                resources[key] -= value
+
     print(resources)
 
 
-
-    # elif drink == "latte":
-    #     print(MENU["latte"])
-    # elif drink == "cappucino":
-    #     print(MENU["cappucino"])
 
