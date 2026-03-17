@@ -17,9 +17,18 @@ while not coffee_maker:
             print(f"{key}: {value}")
 
     if drink =="espresso":
-        print(MENU["espresso"])
-    elif drink == "latte":
-        print(MENU["latte"])
-    elif drink == "cappucino":
-        print(MENU["cappucino"])
+        print(MENU["espresso"].values())
+        for key,value in MENU["espresso"]["ingredients"].items():
+            print(value)
+            if resources["water"]<value:
+                print(f"Sorry there is not enough {resources["water"]}")
+
+            elif resources["milk"]<value:
+
+
+
+    # elif drink == "latte":
+    #     print(MENU["latte"])
+    # elif drink == "cappucino":
+    #     print(MENU["cappucino"])
 
