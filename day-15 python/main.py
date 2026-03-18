@@ -24,7 +24,7 @@ def money(money_recieved, drink_cost):
         print("Sorry not enough money. Money refunded")
         return False
 
-
+print("hi")
 while coffee_maker:
 
     drink = input("What would you like? (espresso/latte/cappucino): ").lower()
