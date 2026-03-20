@@ -7,14 +7,16 @@ money = MoneyMachine()
 coffee_maker = CoffeeMaker()
 coffee_machine = True
 
+coffee_maker.report()
+money.report()
+
 while coffee_machine:
     drink = input("What would you like? (espresso/latte/cappucino): ").lower()
     if drink == "off":
         coffee_machine = False
-
-    if drink == "report":
-        print(coffee_maker.report())
-        print(money.report())
+    elif drink == "report":
+        coffee_maker.report()
+        money.report()
 
     found_drink = menu.find_drink(drink)
 
