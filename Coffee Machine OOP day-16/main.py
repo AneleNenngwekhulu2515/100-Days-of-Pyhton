@@ -20,8 +20,9 @@ while coffee_machine:
 
     if found_drink:
         print("Welcome to the Coffee Machine!")
-        money.process_coins()
         money.make_payment(found_drink.cost)
+        if coffee_maker.is_resource_sufficient(found_drink):
+            coffee_maker.make_coffee(found_drink)
 
 
     else:
