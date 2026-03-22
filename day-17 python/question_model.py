@@ -1,4 +1,4 @@
-class Question
+class Question:
 
     def __init__(self, q_text, q_answer):
         self.text = q_text
@@ -6,4 +6,4 @@ class Question
 
 
 new_q = Question("anele", "False")
-new_q.text
+print(new_q.text)
