@@ -4,6 +4,6 @@ import random
 # question = Question()
 
 class QuizBrain:
-    def __init__(self, questions, answers):
-        self.questions = questions
-        self.answers = answers
+    def __init__(self,q_list):
+        self.questions_number = 0
+        self.question_list = q_list
