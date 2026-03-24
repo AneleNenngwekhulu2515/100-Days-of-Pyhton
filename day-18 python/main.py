@@ -37,9 +37,21 @@ for _ in range(7):
     tim.right(51)
 
 for _ in range(8):
-    tim.color("yellow")
+    tim.color("purple")
     tim.forward(100)
     tim.right(45)
+
+for _ in range(9):
+    tim.color("yellow")
+    tim.forward(100)
+    tim.right(40)
+
+for _ in range(10):
+    tim.color("orange")
+    tim.forward(100)
+    tim.right(36)
+
+
 
 
 
