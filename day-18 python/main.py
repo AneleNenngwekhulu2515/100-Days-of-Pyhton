@@ -1,6 +1,18 @@
-from turtle import Turtle
+from turtle import Turtle, Screen
 
-timmy_the_turtle = Turtle()
+tim = Turtle()
+tim.shape("turtle")
+tim.color("chocolate")
+
+for _ in range(10):
+    tim.penup()
+    tim.forward(10)
+    tim.pendown()
+    tim.forward(10)
+
+
+
+
 
 
 
