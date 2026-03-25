@@ -1,4 +1,5 @@
 from turtle import *
+import random
 
 tim = Turtle(shape="turtle")
 tim.penup()
@@ -32,5 +33,14 @@ tom.goto(x=-230, y=100)
 sam.goto(x=-230, y=-100)
 hank.goto(x=-230, y=-50)
 rex.goto(x=-230, y=50)
+
+is_race_on = False
+
+if user_bet:
+    is_race_on = True
+
+while is_race_on:
+    random.randint(0, 10)
+
 
 screen.exitonclick()
