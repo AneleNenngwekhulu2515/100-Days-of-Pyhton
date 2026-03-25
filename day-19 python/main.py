@@ -4,13 +4,20 @@ tim = Turtle()
 screen = Screen()
 
 def move_forwards():
-    tim.forward(100)
+    tim.forward(50)
 
 def move_backwards():
-    tim.backward(100)
+    tim.backward(50)
 
 def counter_clockwise():
-    tim.circle()
+    tim.left(15)
+
+
+def clockwise():
+    tim.right(15)
+
+def clear():
+    tim.clear()
 
 
 
@@ -18,4 +25,5 @@ screen.listen()
 screen.onkey(key="w", fun= move_forwards)
 screen.onkey(key="s", fun= move_backwards)
 screen.onkey(key="a", fun= counter_clockwise)
+screen.onkey(key="d", fun= clockwise)
 screen.exitonclick()
