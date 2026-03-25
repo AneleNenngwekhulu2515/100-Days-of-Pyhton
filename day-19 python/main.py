@@ -18,6 +18,9 @@ def clockwise():
 
 def clear():
     tim.clear()
+    tim.penup()
+    tim.home()
+    tim.clear()
 
 
 
