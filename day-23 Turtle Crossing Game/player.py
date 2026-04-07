@@ -20,4 +20,7 @@ class Player(Turtle):
             print("You are at the finish line ")
             self.goto(STARTING_POSITION)
 
+    def go_down(self):
+        self.backward(MOVE_DISTANCE)
+
 
