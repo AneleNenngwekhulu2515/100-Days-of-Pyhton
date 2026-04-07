@@ -24,7 +24,8 @@ while game_is_on:
     screen.update()
     car_manager.create_cars()
     car_manager.move_cars()
-    player.is_at_finish_line()
+    if player.is_at_finish_line():
+        car_manager.level_up()
 
 
     #detect collision
