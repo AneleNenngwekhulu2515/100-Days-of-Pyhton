@@ -25,3 +25,5 @@ class Player(Turtle):
         if self.ycor() > FINISH_LINE_Y:
             print("You are at the finish line ")
             self.goto(STARTING_POSITION)
+            return True
+        return False
