@@ -16,11 +16,12 @@ class Player(Turtle):
 
     def go_up(self):
         self.forward(MOVE_DISTANCE)
-        if self.ycor() > FINISH_LINE_Y:
-            print("You are at the finish line ")
-            self.goto(STARTING_POSITION)
+
 
     def go_down(self):
         self.backward(MOVE_DISTANCE)
 
-
+    def is_at_finish_line(self):
+        if self.ycor() > FINISH_LINE_Y:
+            print("You are at the finish line ")
+            self.goto(STARTING_POSITION)
