@@ -8,7 +8,6 @@
 # import csv
 import pandas
 
-
 # with open("weather_data - Sheet1.csv") as data_file:
 #     data = csv.reader(data_file)
 #     temperature = []
