@@ -5,7 +5,7 @@
 #     lst.append(contents)
 #     print(lst)
 
-import csv
+# import csv
 import pandas
 
 # with open("weather_data - Sheet1.csv") as data_file:
